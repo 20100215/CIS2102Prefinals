@@ -60,7 +60,7 @@ export default {
     };
   },
   created() {
-    this.count = this.num;
+    this.count = parseInt(this.num);
   },
   methods: {
     /* Error protection enabled via HTML attributes and Javascript control */
