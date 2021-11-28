@@ -110,13 +110,14 @@ export default {
   computed: {
     filteredItemList(){
       if(this.query===""){
-        return this.itemList;
+        return this.itemList.filter(e=>e.quantity>0);
       } else {
         /* Query search -> by name, id, and category (ES6) */
         return this.itemList.filter(
-          a=> (a.name).toLowerCase().startsWith(this.query.toLowerCase())
+          a=> ((a.name).toLowerCase().startsWith(this.query.toLowerCase())
           || a.id == this.query
-          || a.category.some(x=>(x.toLowerCase()).startsWith(this.query.toLowerCase()))
+          || a.category.some(x=>(x.toLowerCase()).startsWith(this.query.toLowerCase())))
+          && a.quantity>0
         )
       }
     }

@@ -14,6 +14,7 @@ const routes = [
     path: '/Cart',
     name: 'Cart',
     component: Cart,
+    props: true
   },
   {
     path: '/ItemInfo/:id',

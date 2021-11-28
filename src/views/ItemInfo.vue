@@ -45,7 +45,7 @@
             </div>
         </div>
         <router-link to="/" class="btn btn-warning mr-2">Return to menu</router-link>
-        <router-link to="/Cart" class="btn btn-warning ms-2">Check out</router-link>
+        <router-link :to="{name:'Cart', params:{curId:id, curCount:count}}" class="btn btn-warning ms-2">Check out</router-link>
         
     </div>
 </template>
@@ -59,6 +59,7 @@ export default {
     Intro,
   },
   props: {
+    id: Number,
     imgSrc: String,
     itemName: String,
     itemPrice: Number,
